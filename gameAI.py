@@ -24,11 +24,14 @@ class copter:
 	def move(self):
 		''' move the copter '''
 
-for i in range(1000):
+run = True
+while run:
 	for event in pygame.event.get():
 		if event.type == pygame.QUIT:
-			pygame.quit()
-			quit()
+			run = False
 
 	pygame.draw.circle(win, (255,0,0), (300, 400), 20)
 	pygame.display.update()
+
+pygame.quit()
+quit()
