@@ -26,9 +26,9 @@ class copter:
 
 for i in range(1000):
 	for event in pygame.event.get():
-		if event.type == pygame.QUIT():
+		if event.type == pygame.QUIT:
 			pygame.quit()
 			quit()
-	
+
 	pygame.draw.circle(win, (255,0,0), (300, 400), 20)
 	pygame.display.update()
