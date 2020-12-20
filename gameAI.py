@@ -4,8 +4,8 @@ import time
 import os
 import random
 
-WIDTH = 600
-HEIGHT = 800
+WIDTH = 500
+HEIGHT = 600
 
 win = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Game AI")
@@ -27,10 +27,11 @@ class copter:
 run = True
 while run:
 	for event in pygame.event.get():
-		if event.type == pygame.QUIT:
-			run = False
+		if event.type == pygame.KEYDOWN:
+			if event.key == pygame.K_q:
+				run = False
 
-	pygame.draw.circle(win, (255,0,0), (300, 400), 20)
+	pygame.draw.circle(win, (255,0,0), (250, 300), 20)
 	pygame.display.update()
 
 pygame.quit()
