@@ -24,6 +24,6 @@ class copter:
 	def move(self):
 		''' move the copter '''
 
-for i in range(10000):
-	pygame.draw.circle(win, (255,0,0), (300, 400), 200)
+for i in range(1000):
+	pygame.draw.circle(win, (255,0,0), (300, 400), 20)
 	pygame.display.update()
