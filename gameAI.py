@@ -20,3 +20,10 @@ class copter:
 		self.velocity = 0
 		self.height = self.y
 		# self.img = pygame.draw.circle(screen, BLUE, pos, 20)
+
+	def move(self):
+		''' move the copter '''
+
+for i in range(10000):
+	pygame.draw.circle(win, (255,0,0), (300, 400), 200)
+	pygame.display.update()
