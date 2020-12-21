@@ -39,7 +39,7 @@ class copter:
 		''' move the copter '''
 
 
-copter1 = copter(WIDTH / 2, HEIGHT / 2)
+copter1 = copter(WIDTH / 4, HEIGHT / 2)
 
 run = True
 while run:
