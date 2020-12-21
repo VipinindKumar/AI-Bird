@@ -21,7 +21,6 @@ class copter:
 		self.x, self.y = x, y
 		self.velocity = 0
 		self.height = self.y
-		# self.img = pygame.draw.circle(screen, BLUE, pos, 20)
 
 	def draw(self):
 		''' draw the copter on window '''
@@ -29,11 +28,6 @@ class copter:
 		myimage = pygame.image.load("img/copter.png")
 
 		win.blit(myimage, (self.x, self.y))
-		# while 1:
-		#     your_code_here
-
-		#     screen.fill(black)
-		#     pygame.display.flip()
 
 	def move(self):
 		''' move the copter '''
@@ -49,7 +43,6 @@ while run:
 			if event.key == pygame.K_q:
 				run = False
 
-	# pygame.draw.circle(win, (255,0,0), (250, 300), 20)
 	copter1.draw()
 	pygame.display.update()
 	fpsClock.tick(FPS)
