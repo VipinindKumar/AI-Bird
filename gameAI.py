@@ -8,6 +8,7 @@ WIDTH = 500
 HEIGHT = 600
 FPS = 30
 ACCELERATION = 3
+BACKGROUND = (0,0,0)
 
 pygame.init()
 win = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -57,6 +58,10 @@ while run:
 				run = False
 
 	copter1.move()
+
+	# clear screen
+	win.fill(BACKGROUND)
+
 	copter1.draw()
 	pygame.display.update()
 	fpsClock.tick(FPS)
