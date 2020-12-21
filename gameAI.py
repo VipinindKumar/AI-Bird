@@ -27,10 +27,8 @@ class copter:
 		''' draw the copter on window '''
 
 		myimage = pygame.image.load("img/copter.png")
-		imagerect = myimage.get_rect()
 
-
-		win.blit(myimage, imagerect)
+		win.blit(myimage, (self.x, self.y))
 		# while 1:
 		#     your_code_here
 
