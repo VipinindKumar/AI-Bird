@@ -49,7 +49,8 @@ while run:
 			if event.key == pygame.K_q:
 				run = False
 
-	pygame.draw.circle(win, (255,0,0), (250, 300), 20)
+	# pygame.draw.circle(win, (255,0,0), (250, 300), 20)
+	copter1.draw()
 	pygame.display.update()
 
 pygame.quit()
