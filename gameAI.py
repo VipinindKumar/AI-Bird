@@ -36,7 +36,7 @@ class copter:
 
 		# s = v*t + 1/2*a*t^2
 		displ = (self.velocity * self.tick_cnt +
-				(1/2) * (ACCELERATION) * (self.tick_cnt) ^ 2)
+				(1/2) * (ACCELERATION) * (self.tick_cnt) ** 2)
 
 		# stop accelerating after certain point, (kinda terminal velocity)
 		if displ > 15:
