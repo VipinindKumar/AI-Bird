@@ -1,2 +1,2 @@
-# AI Bird
-AI that learns to play Flappy Bird.
+# AI Copter
+AI that learns to play Classic Copter game.
