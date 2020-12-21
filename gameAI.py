@@ -19,8 +19,7 @@ class copter:
 		''' initialize the copter object and
 			sets positional param '''
 		self.x, self.y = x, y
-		self.velocity = 0
-		self.height = self.y
+		self.velocity = 1
 
 	def draw(self):
 		''' draw the copter on window '''
@@ -31,6 +30,7 @@ class copter:
 
 	def move(self):
 		''' move the copter '''
+		
 
 
 copter1 = copter(WIDTH / 4, HEIGHT / 2)
