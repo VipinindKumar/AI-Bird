@@ -8,7 +8,7 @@ WIDTH = 500
 HEIGHT = 600
 FPS = 30
 
-pyame.init()
+pygame.init()
 win = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Game AI")
 fpsClock = pygame.time.Clock()
