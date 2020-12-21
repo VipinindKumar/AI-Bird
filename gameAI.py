@@ -6,10 +6,12 @@ import random
 
 WIDTH = 500
 HEIGHT = 600
+FPS = 30
 
+pyame.init()
 win = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Game AI")
-
+fpsClock = pygame.time.Clock()
 
 class copter:
 	"""docstring for copter"""
@@ -52,6 +54,7 @@ while run:
 	# pygame.draw.circle(win, (255,0,0), (250, 300), 20)
 	copter1.draw()
 	pygame.display.update()
+	fpsClock.tick(FPS)
 
 pygame.quit()
 quit()
