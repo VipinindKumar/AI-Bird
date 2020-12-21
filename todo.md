@@ -4,3 +4,4 @@
 * ~~remake copter image~~
 * ~~blit() and get_rect(), to figure out position problem~~
 * build obstacle image
+* Implement Jump for the copter
