@@ -9,7 +9,7 @@ HEIGHT = 600
 FPS = 30
 ACCELERATION = 3
 BACKGROUND = (0,0,0)
-ROTATION = 20
+ROTATION = 15
 
 pygame.init()
 win = pygame.display.set_mode((WIDTH, HEIGHT))
