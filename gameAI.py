@@ -29,7 +29,9 @@ class copter:
 
 	def draw(self):
 		''' draw the copter on window '''
-		win.blit(self.image, (self.x, self.y))
+		rotImage = pygame.transform.rotate(self.image, self.tilt)
+
+		win.blit(rotImage, (self.x, self.y))
 
 	def move(self):
 		''' move the copter '''
