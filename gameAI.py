@@ -24,6 +24,7 @@ class copter:
 		self.x, self.y = x, y
 		self.velocity = 1
 		self.tick_cnt = 0
+		self.tilt = 0
 		self.image = pygame.image.load("img/copter.png")
 
 	def draw(self):
@@ -41,6 +42,12 @@ class copter:
 		# stop accelerating after certain point, (kinda terminal velocity)
 		if displ > 15:
 			displ = 15
+
+		# add tilt to the copter
+		if displ < 0:
+			self.tilt = ROTATION
+		else:
+			self.tilt = -ROTATION
 
 		# update the position of the copter
 		self.y += displ
