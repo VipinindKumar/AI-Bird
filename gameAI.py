@@ -44,8 +44,10 @@ class copter:
 			displ = 15
 
 		# add tilt to the copter
+		# tilt up if going up
 		if displ < 0:
 			self.tilt = ROTATION
+		# else just point down
 		else:
 			self.tilt = -ROTATION
 
