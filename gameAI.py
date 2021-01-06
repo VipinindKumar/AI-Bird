@@ -46,6 +46,11 @@ class copter:
 		# update the position of the copter
 		self.y += displ
 
+	def jump(self):
+		''' make the bird jump'''
+		self.velocity = -10
+		self.tick_cnt = 0
+
 
 copter1 = copter(WIDTH / 4, HEIGHT / 2)
 
