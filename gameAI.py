@@ -61,6 +61,8 @@ while run:
 		if event.type == pygame.KEYDOWN:
 			if event.key == pygame.K_q:
 				run = False
+			elif event.key == pygame.K_j:
+				copter1.jump()
 
 	copter1.move()
 
