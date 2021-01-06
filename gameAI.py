@@ -24,13 +24,11 @@ class copter:
 		self.x, self.y = x, y
 		self.velocity = 1
 		self.tick_cnt = 0
+		self.image = pygame.image.load("img/copter.png")
 
 	def draw(self):
 		''' draw the copter on window '''
-
-		myimage = pygame.image.load("img/copter.png")
-
-		win.blit(myimage, (self.x, self.y))
+		win.blit(self.image, (self.x, self.y))
 
 	def move(self):
 		''' move the copter '''
