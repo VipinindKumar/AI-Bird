@@ -11,6 +11,7 @@ ACCELERATION = 3
 BACKGROUND = (0,0,0)
 ROTATION = 15
 THICKNESS = 25
+OBSTCOLOR = (10,10,10)
 
 pygame.init()
 win = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -67,7 +68,7 @@ class obstacle(object):
 	def __init__(self,x, y):
 		self.x, self.y = x, y
 		self.width = random.randrange(100, 500)
-		self.image = 
+		self.image = pygame.Rect(self.x, self.y, self.x + THICKNESS, self.y + self.width)
 		
 
 copter1 = copter(WIDTH / 4, HEIGHT / 2)
