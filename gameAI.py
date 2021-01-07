@@ -81,7 +81,7 @@ class obstacle(object):
 		self.x -= SPEED
 
 copter1 = copter(WIDTH / 4, HEIGHT / 2)
-obst1 = obstacle(500, randoom.randrange(100, 500))
+obst1 = obstacle(500, random.randrange(100, 500))
 
 run = True
 while run:
