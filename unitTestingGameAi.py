@@ -18,3 +18,7 @@ class testGame(unittest.TestCase):
 
 	def test_move(self):
 		pass
+
+
+if __name__ == '__main__':
+	unittest.main()

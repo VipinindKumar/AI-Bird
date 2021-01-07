@@ -61,6 +61,7 @@ class copter:
 		self.velocity = -10
 		self.tick_cnt = 0
 
+		
 
 copter1 = copter(WIDTH / 4, HEIGHT / 2)
 
