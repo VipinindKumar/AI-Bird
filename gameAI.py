@@ -70,6 +70,10 @@ class obstacle(object):
 		self.width = random.randrange(100, 500)
 		self.image = pygame.Rect(self.x, self.y, self.x + THICKNESS, self.y + self.width)
 		
+	def draw(self):
+		'''draws the obstcle rectangle
+		at x,y with defined thickness and width'''
+		pygame.draw.rect(win, OBSTCOLOR, self.image)
 
 copter1 = copter(WIDTH / 4, HEIGHT / 2)
 
