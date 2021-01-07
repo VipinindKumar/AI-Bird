@@ -10,6 +10,7 @@ FPS = 30
 ACCELERATION = 3
 BACKGROUND = (0,0,0)
 ROTATION = 15
+THICKNESS = 25
 
 pygame.init()
 win = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -61,6 +62,12 @@ class copter:
 		self.velocity = -10
 		self.tick_cnt = 0
 
+class obstacle(object):
+	"""docstring for obstacle"""
+	def __init__(self,x, y):
+		self.x, self.y = x, y
+		self.width = random.randrange(100, 500)
+		self.image = 
 		
 
 copter1 = copter(WIDTH / 4, HEIGHT / 2)
