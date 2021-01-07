@@ -12,6 +12,7 @@ BACKGROUND = (0,0,0)
 ROTATION = 15
 THICKNESS = 25
 OBSTCOLOR = (10,10,10)
+SPEED = 5
 
 pygame.init()
 win = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -74,6 +75,10 @@ class obstacle(object):
 		'''draws the obstcle rectangle
 		at x,y with defined thickness and width'''
 		pygame.draw.rect(win, OBSTCOLOR, self.image)
+
+	def move(self):
+		'''move obstacle left by speed'''
+		self.x -= SPEED
 
 copter1 = copter(WIDTH / 4, HEIGHT / 2)
 
