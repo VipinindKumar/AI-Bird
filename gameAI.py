@@ -10,8 +10,8 @@ FPS = 30
 ACCELERATION = 3
 BACKGROUND = (0,0,0)
 ROTATION = 15
-THICKNESS = 25
-OBSTCOLOR = (10,10,10)
+THICKNESS = 5
+OBSTCOLOR = (255,10,10)
 SPEED = 5
 
 pygame.init()
@@ -69,11 +69,11 @@ class obstacle(object):
 	def __init__(self,x, y):
 		self.x, self.y = x, y
 		self.width = random.randrange(100, 500)
-		self.image = pygame.Rect(self.x, self.y, self.x + THICKNESS, self.y + self.width)
 		
 	def draw(self):
 		'''draws the obstacle rectangle
 		at x,y with defined thickness and width'''
+		self.image = pygame.Rect(self.x, self.y, self.x + self.width, self.y + THICKNESS)
 		pygame.draw.rect(win, OBSTCOLOR, self.image)
 
 	def move(self):
