@@ -131,6 +131,10 @@ while run:
 	win.fill(BACKGROUND)
 
 	copter1.move()
+	# if copter hit ground
+	if copter1.y >= HEIGHT:
+		run = False
+
 	for obst in obstrn:
 		obst.move()
 		obst.draw()
