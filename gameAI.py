@@ -91,7 +91,10 @@ class obstacle(object):
 		'''fn to tell if end of the screen has been passed'''
 		if (self.x + self.width) < WIDTH:
 			return True
-		return False 
+		return False
+
+	def collision(self, copter):
+		
 
 copter1 = copter(WIDTH / 4, HEIGHT / 2)
 obstrn = deque()
