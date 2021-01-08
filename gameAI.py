@@ -9,7 +9,7 @@ from collections import deque
 WIDTH = 500
 HEIGHT = 600
 FPS = 30
-ACCELERATION = 3
+ACCELERATION = 1
 BACKGROUND = (105,105,105)
 ROTATION = 15
 THICKNESS = 20
@@ -28,7 +28,7 @@ class copter:
 		''' initialize the copter object and
 			sets positional param '''
 		self.x, self.y = x, y
-		self.velocity = 1
+		self.velocity = 0.5
 		self.tick_cnt = 0
 		self.tilt = 0
 		self.image = pygame.image.load("img/copter.png")
@@ -64,7 +64,7 @@ class copter:
 
 	def jump(self):
 		''' make the bird jump'''
-		self.velocity = -10
+		self.velocity = -4
 		self.tick_cnt = 0
 
 class obstacle(object):
