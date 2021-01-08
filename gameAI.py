@@ -102,6 +102,9 @@ while run:
 			elif event.key == pygame.K_j:
 				copter1.jump()
 
+	# clear screen
+	win.fill(BACKGROUND)
+
 	copter1.move()
 	for obst in obstrn:
 		obst.move()
@@ -110,9 +113,6 @@ while run:
 	# create new obstacle, to keep them adjacent
 	if obstrn[-1].passedEnd():
 		obstrn.append(obstacle(500, random.randrange(100,500)))
-
-	# clear screen
-	win.fill(BACKGROUND)
 
 	copter1.draw()
 	pygame.display.update()
