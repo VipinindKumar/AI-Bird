@@ -130,6 +130,7 @@ while run:
 	for obst in obstrn:
 		obst.move()
 		obst.draw()
+		# stop the game if copter collided with obstacle
 		if obst.collision(copter1):
 			run = False
 
