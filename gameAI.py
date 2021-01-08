@@ -94,7 +94,19 @@ class obstacle(object):
 		return False
 
 	def collision(self, copter):
+		'''returns True if obstacle and 
+		copter are overlapping'''
+		cRect = copter.image.get_rect()
+		cRect.topleft = (copter.x, copter.y)
 		
+		return cRect.colliderect(self.image)
+
+		# print(copterMask)
+		# # obstacleMask = pygame.mask.from_surface(self.image)
+		# pygame.sprite.collide_mask
+		# # rect to surface
+		# pygame.Surface((a.w, a.h))
+
 
 copter1 = copter(WIDTH / 4, HEIGHT / 2)
 obstrn = deque()
@@ -117,6 +129,7 @@ while run:
 	for obst in obstrn:
 		obst.move()
 		obst.draw()
+		obst.collision(copter1)
 
 	# create new obstacle, to keep them adjacent
 	if obstrn[-1].passedEnd():
