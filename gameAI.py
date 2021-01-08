@@ -15,6 +15,7 @@ ROTATION = 15
 THICKNESS = 20
 OBSTCOLOR = (192,192,192)
 SPEED = 5
+GAP = 100
 
 pygame.init()
 win = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -118,7 +119,13 @@ while run:
 		# if rdm > (cordY - GAP):
 		# 	rdm += (2 * GAP)
 
-		obstrn.append(obstacle(500, random.randrange(100, 500)))
+		# ineffiecient implementation for getting gap
+		cordY = obstrn[-1].y
+		rdm = cordY
+		while rdm > (cordY-GAP) and rdm < (cordY+GAP):
+			rdm = random.randrange(100, 500)
+
+		obstrn.append(obstacle(500, rdm))
 
 	copter1.draw()
 	pygame.display.update()
