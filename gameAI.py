@@ -112,7 +112,13 @@ while run:
 
 	# create new obstacle, to keep them adjacent
 	if obstrn[-1].passedEnd():
-		obstrn.append(obstacle(500, random.randrange(100,500)))
+		# code to get obstcles with a certain gap b/w them
+		# cordY = obstrn[-1].y
+		# rdm = random.randrange(100, cordY)
+		# if rdm > (cordY - GAP):
+		# 	rdm += (2 * GAP)
+
+		obstrn.append(obstacle(500, random.randrange(100, 500)))
 
 	copter1.draw()
 	pygame.display.update()
