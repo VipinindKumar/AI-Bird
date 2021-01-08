@@ -9,3 +9,6 @@ AI that learns to play Classic Copter game.
 
 ### With jumping implemented
 <img src="progress/3-jumping.gif" alt="copter jumping" width="300"/>
+
+### Copter game with obstacles
+<img src="progress/4-obstacles.gif" alt="copter with obstacles" width="300"/>
