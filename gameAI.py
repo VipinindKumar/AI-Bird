@@ -62,6 +62,10 @@ class copter:
 		# update the position of the copter
 		self.y += displ
 
+		# if let it go beyond top of the screen
+		if self.y < 0:
+			self.y = 0
+
 	def jump(self):
 		''' make the copter jump'''
 		self.velocity = -4
