@@ -4,6 +4,8 @@ import time
 import os
 import random
 
+from collections import deque
+
 WIDTH = 500
 HEIGHT = 600
 FPS = 30
@@ -80,8 +82,15 @@ class obstacle(object):
 		'''move obstacle left by speed'''
 		self.x -= SPEED
 
+	def passedEnd(self):
+		'''fn to tell if end of the screen has been passed'''
+		if (self.x + self.width) < WIDTH:
+			return True
+		return False 
+
 copter1 = copter(WIDTH / 4, HEIGHT / 2)
-obst1 = obstacle(500, 250)
+obstrn = deque()
+obstrn.append(obstacle(500, 250))
 
 run = True
 while run:
@@ -94,13 +103,18 @@ while run:
 				copter1.jump()
 
 	copter1.move()
-	obst1.move()
+	for obst in obstrn:
+		obst.move()
+		obst.draw()
+
+	# create new obstacle, to keep them adjacent
+	if obstrn[-1].passedEnd():
+		obstrn.append(obstacle(500, random.randrange(100,500)))
 
 	# clear screen
 	win.fill(BACKGROUND)
 
 	copter1.draw()
-	obst1.draw()
 	pygame.display.update()
 	fpsClock.tick(FPS)
 
