@@ -67,6 +67,10 @@ class copter:
 		self.velocity = -4
 		self.tick_cnt = 0
 
+	def mask(self):
+		'''returns the mask for the bird'''
+		return pygame.mask.from_surface(self.image)
+
 class obstacle(object):
 	"""docstring for obstacle"""
 	def __init__(self,x, y):
