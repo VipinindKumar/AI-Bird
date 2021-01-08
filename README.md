@@ -3,3 +3,6 @@ AI that learns to play Classic Copter game.
 
 ### Pygame window and copter pixel image on it
 <img src="progress/1.png" alt="copter" width="300"/>
+
+### Copter with gravity effect
+<img src="progress/2-gravity.gif" alt="copter with gravity" width="300">
