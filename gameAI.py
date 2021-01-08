@@ -63,13 +63,17 @@ class copter:
 		self.y += displ
 
 	def jump(self):
-		''' make the bird jump'''
+		''' make the copter jump'''
 		self.velocity = -4
 		self.tick_cnt = 0
 
-	def mask(self):
-		'''returns the mask for the bird'''
-		return pygame.mask.from_surface(self.image)
+	def rect(self):
+		'''returns the rect for the copter'''
+		# return pygame.mask.from_surface(self.image)
+		cRect = self.image.get_rect()
+		cRect.topleft = (self.x, self.y)
+		return cRect
+
 
 class obstacle(object):
 	"""docstring for obstacle"""
@@ -98,7 +102,7 @@ class obstacle(object):
 		copter are overlapping'''
 		cRect = copter.image.get_rect()
 		cRect.topleft = (copter.x, copter.y)
-		
+
 		return cRect.colliderect(self.image)
 
 		# print(copterMask)
