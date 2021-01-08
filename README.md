@@ -6,3 +6,6 @@ AI that learns to play Classic Copter game.
 
 ### Copter with gravity effect
 <img src="progress/2-gravity.gif" alt="copter with gravity" width="300">
+
+### With jumping implemented
+<img src="progress/3-jumping.gif" alt="copter jumping" width="300"/>
