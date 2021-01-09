@@ -218,7 +218,17 @@ def eval_genomes(genomes, config):
 			if not obstacle.passedCopter():
 				break
 
-		
+		# move copter and predict if copter need to jump or not
+		for i, copter in enumerate(copters):
+			# increase fitness for copter for every frame survived
+			gl[i].fitness += 0.1
+			copter.move()
+
+			# inputs y position of copter and vertical distance b/w copter and obstacle
+			predict = nnets[i].activate((copter.y, abs(copter.y - obstacles[obstIndex].y)))
+			if predict[0] > 0.5:
+				copter.jump()
+
 
 
 
