@@ -164,6 +164,24 @@ while run:
 pygame.quit()
 quit()
 
+def run(config_file):
+	# Load configuration.
+	config = neat.Config(neat.DefaultGenome, neat.DefaultReproduction,
+	                     neat.DefaultSpeciesSet, neat.DefaultStagnation,
+	                     config_file)
+
+	# Create the population, which is the top-level object for a NEAT run.
+	p = neat.Population(config)
+
+	# Add a stdout reporter to show progress in the terminal.
+	p.add_reporter(neat.StdOutReporter(True))
+	p.add_reporter(neat.StatisticsReporter())
+	p.add_reporter(neat.Checkpointer(5))
+
+	# Run for up to 300 generations.
+	winner = p.run(eval_genomes, 300)
+
+
 if __name__ == '__main__':
 	# load the config file fot neat
 	run(os.path.join(os.path.dirname(__file__),
