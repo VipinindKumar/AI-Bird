@@ -197,14 +197,13 @@ def eval_genomes(genomes, config):
 	while len(copters) > 0 and run:
 		fpsClock.tick(FPS)
 
-		# to stop execution press 'q' on keyboard
+		# to stop execution
 		for event in pygame.event.get():
-			if event.type == pygame.KEYDOWN:
-				if event.key == pygame.K_q:
-					run = False
-					pygame.quit()
-					quit()
-					break
+			if event.type == pygame.QUIT:
+				run = False
+				pygame.quit()
+				quit()
+				break
 
 		#
 
