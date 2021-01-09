@@ -1,8 +1,7 @@
 import pygame
 import neat
-import time
-import os
 import random
+import os
 
 from collections import deque
 
@@ -164,3 +163,8 @@ while run:
 
 pygame.quit()
 quit()
+
+if __name__ == '__main__':
+	# load the config file fot neat
+	run(os.path.join(os.path.dirname(__file__),
+	 				'neatConfig.txt'))
