@@ -19,7 +19,7 @@ GAP = 100
 pygame.init()
 win = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Game AI")
-fpsClock = pygame.time.Clock()
+generation = 0
 
 class copter:
 	"""docstring for copter"""
@@ -173,7 +173,28 @@ def eval_genomes(genomes, config):
 		and updating their fitness according to thier
 		performance
 	'''
-	
+	# vriable definations to be used in fn
+	generation += 1
+	score = 0
+	run = True
+	fpsClock = pygame.time.Clock()
+	obstacles = deque()
+	obstacles.append(obstacle(500, 250))
+	nnets = []
+	copters = []
+	gl = []
+
+	# create copter, neuralnet for every genome in generation
+	for genomeId, genome in genomes:
+		# set initial fitness for copters to 0
+		genome.fitness = 0
+		nnet = neat.nn.FeedForwardNetwork.create(genome, config)
+		nnets.append(nnet)
+		copters.append(copter(WIDTH / 4, HEIGHT / 2))
+		gl.append(genome)
+
+
+
 
 
 def run(config_file):
