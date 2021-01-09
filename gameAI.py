@@ -164,6 +164,18 @@ while run:
 pygame.quit()
 quit()
 
+
+def eval_genomes(genomes, config):
+	''' runs for every generation of copters,
+		run the copter game for every copter 
+		from the population simultaneously, 
+		taking their actions from neural network
+		and updating their fitness according to thier
+		performance
+	'''
+	
+
+
 def run(config_file):
 	# Load configuration.
 	config = neat.Config(neat.DefaultGenome, neat.DefaultReproduction,
