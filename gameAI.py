@@ -111,6 +111,13 @@ class obstacle(object):
 		# # rect to surface
 		# pygame.Surface((a.w, a.h))
 
+	def passedCopter(self):
+		'''returns True if obstaces has passed copter or width/4
+		'''
+		if (self.x + self.width) < (WIDTH / 4):
+			return True
+		return False
+
 
 copter1 = copter(WIDTH / 4, HEIGHT / 2)
 obstrn = deque()
@@ -205,7 +212,13 @@ def eval_genomes(genomes, config):
 				quit()
 				break
 
-		#
+		# which obstacle the copter need to make decision on
+		obstIndex = 0
+		for obstIndex, obstacle in enumerate(obstacles):
+			if not obstacle.passedCopter():
+				break
+
+		
 
 
 
