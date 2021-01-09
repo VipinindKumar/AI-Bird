@@ -193,7 +193,20 @@ def eval_genomes(genomes, config):
 		copters.append(copter(WIDTH / 4, HEIGHT / 2))
 		gl.append(genome)
 
+	# run till no copter is left flying
+	while len(copters) > 0 and run:
+		fpsClock.tick(FPS)
 
+		# to stop execution press 'q' on keyboard
+		for event in pygame.event.get():
+			if event.type == pygame.KEYDOWN:
+				if event.key == pygame.K_q:
+					run = False
+					pygame.quit()
+					quit()
+					break
+
+		#
 
 
 
