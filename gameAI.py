@@ -8,7 +8,7 @@ from collections import deque
 
 WIDTH = 500
 HEIGHT = 600
-FPS = 30
+FPS = 60
 ACCELERATION = 1
 BACKGROUND = (25,25,25)
 OBSTCOLOR = (192,192,192)
