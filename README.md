@@ -12,3 +12,15 @@ AI that learns to play Classic Copter game.
 
 ### Copter game with obstacles
 <img src="progress/4-obstacles.gif" alt="copter with obstacles" width="300"/>
+
+### With collision
+<img src="progress/5-collision.gif" alt="copter game with collision" width="300"/>
+
+### Multiple Copters generation using NEAT
+<img src="progress/6-copters.gif" width="300"/>
+
+### Copter AIs sticking to the top of the screen
+<img src="progress/7-toprider.gif" width="300"/>
+
+### When top of the screen was made collidable with copter
+<img src="progress/8-working.gif" width="300"/>
