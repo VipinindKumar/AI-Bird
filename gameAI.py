@@ -130,8 +130,8 @@ def drawScreen(copters, obstacles, score):
 	win.fill(BACKGROUND)
 
 	# draw all obstacles in the deque
-	for obstacle in obstacles:
-		obstacle.draw()
+	for obst in obstacles:
+		obst.draw()
 
 	# draw every copter
 	for copter in copters:
@@ -195,8 +195,8 @@ def eval_genomes(genomes, config):
 
 		# which obstacle the copter need to make decision on
 		obstIndex = 0
-		for obstIndex, obstacle in enumerate(obstacles):
-			if not obstacle.passedCopter():
+		for obstIndex, obst in enumerate(obstacles):
+			if not obst.passedCopter():
 				break
 
 		# move copter and predict if copter need to jump or not
@@ -212,21 +212,21 @@ def eval_genomes(genomes, config):
 
 		# advance the game
 
-		for obstacle in obstacles:
-			obstacle.move()
+		for obst in obstacles:
+			obst.move()
 			
 			# remove copter if collidede with obstacle
 			for i, copter in enumerate(copters):
-				if obstacle.collision(copter):
+				if obst.collision(copter):
 					gl[i].fitness -= 1
 					gl.pop(i)
 					nnets.pop(i)
 					copters.pop(i)
 
 			# add obstacle if needed
-			if obstacle.passedEnd():
+			if obst.passedEnd():
 				# ineffiecient implementation for getting gap
-				cordY = obstacle.y
+				cordY = obst.y
 				rdm = cordY
 				while rdm > (cordY-GAP) and rdm < (cordY+GAP):
 					rdm = random.randrange(100, 500)
@@ -234,11 +234,11 @@ def eval_genomes(genomes, config):
 				obstacles.append(obstacle(500, rdm))
 
 			# if copter passed this obstacle
-			if obstacle.passedCopter():
+			if obst.passedCopter():
 				score += 1
 
 			# remove obstacle that passed the screen
-			if obstacle.passedScreen():
+			if obst.passedScreen():
 				obstacles.popleft()
 
 		# remove copters that fallen down
