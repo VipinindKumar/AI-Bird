@@ -172,6 +172,26 @@ pygame.quit()
 quit()
 
 
+def drawScreen(copters, obstacles, score):
+	'''draws copters and obstacles and
+		add labels for scroe and generation 
+	'''
+	# clear screen
+	win.fill(BACKGROUND)
+
+	# draw all obstacles in the deque
+	for obstacle in obstacles:
+		obstacle.draw()
+
+	# draw every copter
+	for copter in copters:
+		copter.draw()
+
+	# label for score
+	
+
+
+
 def eval_genomes(genomes, config):
 	''' runs for every generation of copters,
 		run the copter game for every copter 
@@ -268,7 +288,7 @@ def eval_genomes(genomes, config):
 				gl.pop(i)
 
 		# draws copters, obstacles and add score on screen
-		drawScreen(copters, obstacles, score, generation)
+		drawScreen(copters, obstacles, score)
 
 
 def run(config_file):
