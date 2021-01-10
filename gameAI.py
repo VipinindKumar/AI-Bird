@@ -256,6 +256,8 @@ def eval_genomes(genomes, config):
 			# if copter passed this obstacle
 			if not obst.varPassedCopter and obst.passedCopter():
 				score += 1
+				for genome in gl:
+					genome.fitness += 10
 
 			# remove obstacle that passed the screen
 			if not obst.varPassedScreen and obst.passedScreen():
@@ -279,7 +281,7 @@ def eval_genomes(genomes, config):
 				nnets.pop(i)
 				copters.pop(i)
 				gl.pop(i)
-				
+
 
 		# draws copters, obstacles and add score on screen
 		drawScreen(copters, obstacles, score)
