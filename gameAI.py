@@ -118,6 +118,12 @@ class obstacle(object):
 			return True
 		return False
 
+	def passedScreen(self):
+		'''if copter has passed the whole screen
+		'''
+		if (self.x + self.width) <= 0:
+			return True
+		return False
 
 copter1 = copter(WIDTH / 4, HEIGHT / 2)
 obstrn = deque()
