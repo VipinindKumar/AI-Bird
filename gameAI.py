@@ -229,6 +229,20 @@ def eval_genomes(genomes, config):
 			if predict[0] > 0.5:
 				copter.jump()
 
+		# advance the game
+
+		for obstacle in obstacles:
+			obstacle.move()
+			
+			# remove copter if collidede with obstacle
+			for i, copter in enumerate(copters):
+				if obstacle.collision(copter):
+					gl[i].fitness -= 1
+					gl.pop(i)
+					nnets.pop(i)
+					copters.pop(i)
+
+			# remove obstacles that passed the screen
 
 
 
