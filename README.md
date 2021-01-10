@@ -12,3 +12,6 @@ AI that learns to play Classic Copter game.
 
 ### Copter game with obstacles
 <img src="progress/4-obstacles.gif" alt="copter with obstacles" width="300"/>
+
+### With collision
+<img src="progress/5-collision.gif" alt="copter game with collision" width="300"/>
