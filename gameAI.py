@@ -2,6 +2,7 @@ import pygame
 import neat
 import random
 import os
+import pygame.freetype
 
 from collections import deque
 
