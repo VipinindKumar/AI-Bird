@@ -88,6 +88,7 @@ class obstacle(object):
 		self.image = pygame.Rect(self.x, self.y, self.width, THICKNESS)
 		self.varPassedEnd = False
 		self.varPassedCopter = False
+		self.varPassedScreen = False
 
 	def draw(self):
 		'''draws the obstacle rectangle
@@ -134,7 +135,13 @@ class obstacle(object):
 	def passedScreen(self):
 		'''if copter has passed the whole screen
 		'''
-		return (self.x + self.width) < 0
+		if self.varPassedScreen:
+			return True
+
+		if (self.x + self.width) < 0:
+			self.varPassedScreen = True
+			return True
+		return False
 
 
 def drawScreen(copters, obstacles, score):
@@ -255,7 +262,7 @@ def eval_genomes(genomes, config):
 				score += 1
 
 			# remove obstacle that passed the screen
-			if obst.passedScreen():
+			if not obst.varPassedScreen and obst.passedScreen():
 				removeObst = True
 
 		# add obstacle
