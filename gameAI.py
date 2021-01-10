@@ -61,7 +61,7 @@ class copter:
 		# update the position of the copter
 		self.y += displ
 
-		# if let it go beyond top of the screen
+		# don't let it go beyond top of the screen
 		if self.y < 0:
 			self.y = 0
 
@@ -260,8 +260,15 @@ def eval_genomes(genomes, config):
 			if obstacle.passedScreen():
 				obstacles.popleft()
 
-			#
+		# remove copters that fallen down
+		for i, copter in enumerate(copters):
+			if copter.y >= HEIGHT:
+				nnets.pop(i)
+				copters.pop(i)
+				gl.pop(i)
 
+		# draws copters, obstacles and add score on screen
+		drawScreen(copters, obstacles, score, generation)
 
 
 def run(config_file):
