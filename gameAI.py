@@ -269,8 +269,7 @@ def run(config_file):
 
 if __name__ == '__main__':
 	# load the config file fot neat
-	run(os.path.join(os.path.dirname(__file__),
-	 				'neatConfig.txt'))
+	run(os.path.join(os.path.dirname(__file__),	'neatConfig.txt'))
 
 
 ################################################
