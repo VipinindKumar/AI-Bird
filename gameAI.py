@@ -119,58 +119,6 @@ class obstacle(object):
 		'''
 		return (self.x + self.width) <= 0
 
-copter1 = copter(WIDTH / 4, HEIGHT / 2)
-obstrn = deque()
-obstrn.append(obstacle(500, 250))
-
-run = True
-while run:
-	# to stop execution press 'q' on keyboard
-	for event in pygame.event.get():
-		if event.type == pygame.KEYDOWN:
-			if event.key == pygame.K_q:
-				run = False
-			elif event.key == pygame.K_j:
-				copter1.jump()
-
-	# clear screen
-	win.fill(BACKGROUND)
-
-	copter1.move()
-	# if copter hit ground
-	if copter1.y >= HEIGHT:
-		run = False
-
-	for obst in obstrn:
-		obst.move()
-		obst.draw()
-		# stop the game if copter collided with obstacle
-		if obst.collision(copter1):
-			run = False
-
-	# create new obstacle, to keep them adjacent
-	if obstrn[-1].passedEnd():
-		# code to get obstcles with a certain gap b/w them
-		# cordY = obstrn[-1].y
-		# rdm = random.randrange(100, cordY)
-		# if rdm > (cordY - GAP):
-		# 	rdm += (2 * GAP)
-
-		# ineffiecient implementation for getting gap
-		cordY = obstrn[-1].y
-		rdm = cordY
-		while rdm > (cordY-GAP) and rdm < (cordY+GAP):
-			rdm = random.randrange(100, 500)
-
-		obstrn.append(obstacle(500, rdm))
-
-	copter1.draw()
-	pygame.display.update()
-	fpsClock.tick(FPS)
-
-pygame.quit()
-quit()
-
 
 def drawScreen(copters, obstacles, score):
 	'''draws copters and obstacles and
@@ -323,3 +271,61 @@ if __name__ == '__main__':
 	# load the config file fot neat
 	run(os.path.join(os.path.dirname(__file__),
 	 				'neatConfig.txt'))
+
+
+################################################
+'''
+# code used for testing the copter game
+copter1 = copter(WIDTH / 4, HEIGHT / 2)
+obstrn = deque()
+obstrn.append(obstacle(500, 250))
+
+run = True
+while run:
+	# to stop execution press 'q' on keyboard
+	for event in pygame.event.get():
+		if event.type == pygame.KEYDOWN:
+			if event.key == pygame.K_q:
+				run = False
+			elif event.key == pygame.K_j:
+				copter1.jump()
+
+	# clear screen
+	win.fill(BACKGROUND)
+
+	copter1.move()
+	# if copter hit ground
+	if copter1.y >= HEIGHT:
+		run = False
+
+	for obst in obstrn:
+		obst.move()
+		obst.draw()
+		# stop the game if copter collided with obstacle
+		if obst.collision(copter1):
+			run = False
+
+	# create new obstacle, to keep them adjacent
+	if obstrn[-1].passedEnd():
+		# code to get obstcles with a certain gap b/w them
+		# cordY = obstrn[-1].y
+		# rdm = random.randrange(100, cordY)
+		# if rdm > (cordY - GAP):
+		# 	rdm += (2 * GAP)
+
+		# ineffiecient implementation for getting gap
+		cordY = obstrn[-1].y
+		rdm = cordY
+		while rdm > (cordY-GAP) and rdm < (cordY+GAP):
+			rdm = random.randrange(100, 500)
+
+		obstrn.append(obstacle(500, rdm))
+
+	copter1.draw()
+	pygame.display.update()
+	fpsClock.tick(FPS)
+
+pygame.quit()
+quit()
+'''
+################################################
