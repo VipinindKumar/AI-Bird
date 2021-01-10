@@ -24,3 +24,6 @@ AI that learns to play Classic Copter game.
 
 ### When top of the screen was made collidable with copter
 <img src="progress/8-working.gif" width="300"/>
+
+### When fitness of the Copter AIs is increased with increment in score
+<img src="progress/9-score.gif" width="300"/>
