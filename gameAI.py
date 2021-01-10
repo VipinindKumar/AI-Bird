@@ -94,12 +94,6 @@ class obstacle(object):
 		'''move obstacle left by speed'''
 		self.x -= SPEED
 
-	def passedEnd(self):
-		'''fn to tell if end of the screen has been passed'''
-		if (self.x + self.width) < WIDTH:
-			return True
-		return False
-
 	def collision(self, copter):
 		'''returns True if obstacle and 
 		copter are overlapping'''
@@ -111,19 +105,19 @@ class obstacle(object):
 		# # rect to surface
 		# pygame.Surface((a.w, a.h))
 
+	def passedEnd(self):
+		'''fn to tell if end of the screen has been passed'''
+		return (self.x + self.width) < WIDTH
+
 	def passedCopter(self):
 		'''returns True if obstaces has passed copter or width/4
 		'''
-		if (self.x + self.width) < (WIDTH / 4):
-			return True
-		return False
+		return (self.x + self.width) < (WIDTH / 4)
 
 	def passedScreen(self):
 		'''if copter has passed the whole screen
 		'''
-		if (self.x + self.width) <= 0:
-			return True
-		return False
+		return (self.x + self.width) <= 0
 
 copter1 = copter(WIDTH / 4, HEIGHT / 2)
 obstrn = deque()
