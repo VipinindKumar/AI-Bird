@@ -228,7 +228,7 @@ def eval_genomes(genomes, config):
 					copters.pop(i)
 
 			# add obstacle if needed
-			if obst.passedEnd():
+			if obst.passedEnd() and not addObst:
 				addObst = True
 				# ineffiecient implementation for getting gap
 				cordY = obst.y
