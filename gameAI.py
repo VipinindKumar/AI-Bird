@@ -242,8 +242,17 @@ def eval_genomes(genomes, config):
 					nnets.pop(i)
 					copters.pop(i)
 
-			# remove obstacles that passed the screen
+			# add obstacle if needed
+			if obstacle.passedEnd():
+				# ineffiecient implementation for getting gap
+				cordY = obstacle.y
+				rdm = cordY
+				while rdm > (cordY-GAP) and rdm < (cordY+GAP):
+					rdm = random.randrange(100, 500)
 
+				obstacles.append(obstacle(500, rdm))
+
+			#
 
 
 def run(config_file):
