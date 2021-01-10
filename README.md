@@ -33,3 +33,8 @@ AI that learns to play Classic Copter game.
 
 - change input to nnets from absolute value to -ve and +ve
   - generation 5 copter reached score of 25+
+
+- added 1 hidden layer
+  - generation 7's two copters reached score 22
+  - change helped?
+  - maybe, need deeper dive and running for a fixed saturated amount of time
