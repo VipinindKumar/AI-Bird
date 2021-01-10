@@ -29,4 +29,7 @@ AI that learns to play Classic Copter game.
 <img src="progress/9-score.gif" width="300"/>
 
 - made score more important by increasing fitness 
-- definitely increased performance generation 6 reached score of 19
+  - definitely increased performance generation 6 reached score of 19
+
+- change input to nnets from absolute value to -ve and +ve
+  - generation 5 copter reached score of 25+
