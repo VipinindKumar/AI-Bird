@@ -298,8 +298,6 @@ def run(config_file):
 
 	# Add a stdout reporter to show progress in the terminal.
 	p.add_reporter(neat.StdOutReporter(True))
-	p.add_reporter(neat.StatisticsReporter())
-	p.add_reporter(neat.Checkpointer(5))
 
 	# Run for up to 50 generations.
 	winner = p.run(eval_genomes, 50)
