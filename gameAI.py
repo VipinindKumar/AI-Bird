@@ -226,7 +226,7 @@ def eval_genomes(genomes, config):
 			heli.move()
 
 			# inputs y position of copter and vertical distance b/w copter and obstacle
-			predict = nnets[i].activate((heli.y, abs(heli.y - obstacles[obstIndex].y)))
+			predict = nnets[i].activate((heli.y, (heli.y - obstacles[obstIndex].y)))
 			if predict[0] > 0.5:
 				heli.jump()
 
