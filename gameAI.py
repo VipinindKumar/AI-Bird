@@ -85,11 +85,12 @@ class obstacle(object):
 	def __init__(self,x, y):
 		self.x, self.y = x, y
 		self.width = random.randrange(100, 500)
-		self.image = pygame.Rect(self.x, self.y, self.width, THICKNESS)
+		self.image = None
 		
 	def draw(self):
 		'''draws the obstacle rectangle
 		at x,y with defined thickness and width'''
+		self.image = pygame.Rect(self.x, self.y, self.width, THICKNESS)
 		pygame.draw.rect(win, OBSTCOLOR, self.image)
 
 	def move(self):
@@ -119,7 +120,7 @@ class obstacle(object):
 	def passedScreen(self):
 		'''if copter has passed the whole screen
 		'''
-		return (self.x + self.width) <= 0
+		return (self.x + self.width) < 0
 
 
 def drawScreen(copters, obstacles, score):
