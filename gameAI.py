@@ -269,11 +269,17 @@ def eval_genomes(genomes, config):
 			obstacles.popleft()
 
 		# remove copters that fallen down
+		# or gone to space
 		for i, heli in enumerate(copters):
 			if heli.y >= HEIGHT:
 				nnets.pop(i)
 				copters.pop(i)
 				gl.pop(i)
+			elif heli.y < 0:
+				nnets.pop(i)
+				copters.pop(i)
+				gl.pop(i)
+				
 
 		# draws copters, obstacles and add score on screen
 		drawScreen(copters, obstacles, score)
