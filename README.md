@@ -18,3 +18,6 @@ AI that learns to play Classic Copter game.
 
 ### Multiple Copters generation using NEAT
 <img src="progress/6-copters.gif" width="300"/>
+
+### Copter AIs sticking to the top of the screen
+<img src="progress/7-toprider.gif" width="300"/>
