@@ -1,6 +1,8 @@
 # AI Copter
 AI that learns to play Classic Copter game.
 
+<img src="progress/9-score.gif" width="300"/>
+
 ### Pygame window and copter pixel image on it
 <img src="progress/1.png" alt="copter" width="300"/>
 
@@ -39,4 +41,4 @@ AI that learns to play Classic Copter game.
   - change helped?
   - maybe, need deeper dive and running for a fixed saturated amount of time
   
-- Can mke the game run faster, by increasing the FPS constant
+- Can make the game run faster, by increasing the FPS constant
