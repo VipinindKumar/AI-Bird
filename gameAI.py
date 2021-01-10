@@ -85,7 +85,7 @@ class obstacle(object):
 	def __init__(self,x, y):
 		self.x, self.y = x, y
 		self.width = random.randrange(100, 500)
-		self.image = None
+		self.image = pygame.Rect(self.x, self.y, self.width, THICKNESS)
 		
 	def draw(self):
 		'''draws the obstacle rectangle
