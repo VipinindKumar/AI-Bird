@@ -139,15 +139,15 @@ def drawScreen(copters, obstacles, score):
 	font = pygame.freetype.SysFont(None, 20)
 
 	# label for score
-    font.render_to(win, (10, 10), 'Score: ' + str(score), (0,0,0))
+	font.render_to(win, (10, 10), 'Score: ' + str(score), (0,0,0))
 
     # label for generation
-    font.render_to(win, (10, 40), 'Gen: ' + str(generation), (0,0,0))
+	font.render_to(win, (10, 40), 'Gen: ' + str(generation), (0,0,0))
 
     #label for flying ccopters
-    font.render_to(win, (10, 70), 'Flying: ' + str(len(copters)), (0,0,0))
+	font.render_to(win, (10, 70), 'Flying: ' + str(len(copters)), (0,0,0))
 
-    pygame.display.update()
+	pygame.display.update()
 
 
 def eval_genomes(genomes, config):
