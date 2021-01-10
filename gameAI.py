@@ -212,7 +212,8 @@ def eval_genomes(genomes, config):
 				heli.jump()
 
 		# advance the game
-
+		addObst = False
+		removeObst = False
 		for obst in obstacles:
 			obst.move()
 			
@@ -226,13 +227,12 @@ def eval_genomes(genomes, config):
 
 			# add obstacle if needed
 			if obst.passedEnd():
+				addObst = True
 				# ineffiecient implementation for getting gap
 				cordY = obst.y
 				rdm = cordY
 				while rdm > (cordY-GAP) and rdm < (cordY+GAP):
 					rdm = random.randrange(100, 500)
-
-				obstacles.append(obstacle(500, rdm))
 
 			# if copter passed this obstacle
 			if obst.passedCopter():
@@ -240,7 +240,14 @@ def eval_genomes(genomes, config):
 
 			# remove obstacle that passed the screen
 			if obst.passedScreen():
-				obstacles.popleft()
+				removeObst = True
+
+		# add obstacle
+		if addObst:
+			obstacles.append(obstacle(500, rdm))
+		# remove obstacle
+		if removeObst:
+			obstacles.popleft()
 
 		# remove copters that fallen down
 		for i, heli in enumerate(copters):
