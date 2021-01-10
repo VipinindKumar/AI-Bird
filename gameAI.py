@@ -125,7 +125,7 @@ class obstacle(object):
 		'''
 		if self.varPassedCopter:
 			return True
-		
+
 		if (self.x + self.width) < (WIDTH / 4):
 			self.varPassedCopter = True
 			return True
@@ -242,7 +242,7 @@ def eval_genomes(genomes, config):
 					copters.pop(i)
 
 			# add obstacle if needed
-			if obst.passedEnd() and not addObst:
+			if not obst.varPassedEnd and obst.passedEnd():
 				addObst = True
 				# ineffiecient implementation for getting gap
 				cordY = obst.y
@@ -251,7 +251,7 @@ def eval_genomes(genomes, config):
 					rdm = random.randrange(100, 500)
 
 			# if copter passed this obstacle
-			if obst.passedCopter():
+			if not obst.varPassedCopter and obst.passedCopter():
 				score += 1
 
 			# remove obstacle that passed the screen
