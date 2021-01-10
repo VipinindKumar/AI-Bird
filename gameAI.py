@@ -10,10 +10,11 @@ WIDTH = 500
 HEIGHT = 600
 FPS = 30
 ACCELERATION = 1
-BACKGROUND = (25,25,25)#(105,105,105)
+BACKGROUND = (25,25,25)
+OBSTCOLOR = (192,192,192)
+TEXTCOLOR = (255,255,255)
 ROTATION = 15
 THICKNESS = 20
-OBSTCOLOR = (192,192,192)
 SPEED = 5
 GAP = 100
 
@@ -142,13 +143,13 @@ def drawScreen(copters, obstacles, score):
 	font = pygame.freetype.SysFont(None, 20)
 
 	# label for score
-	font.render_to(win, (10, 10), 'Score: ' + str(score), (0,0,0))
+	font.render_to(win, (10, 10), 'Score: ' + str(score), TEXTCOLOR)
 
     # label for generation
-	font.render_to(win, (10, 40), 'Gen: ' + str(generation), (0,0,0))
+	font.render_to(win, (10, 40), 'Gen: ' + str(generation), TEXTCOLOR)
 
     #label for flying ccopters
-	font.render_to(win, (10, 70), 'Flying: ' + str(len(copters)), (0,0,0))
+	font.render_to(win, (10, 70), 'Flying: ' + str(len(copters)), TEXTCOLOR)
 
 	pygame.display.update()
 
