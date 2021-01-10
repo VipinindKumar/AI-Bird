@@ -21,3 +21,6 @@ AI that learns to play Classic Copter game.
 
 ### Copter AIs sticking to the top of the screen
 <img src="progress/7-toprider.gif" width="300"/>
+
+### When top of the screen was made collidable with copter
+<img src="progress/8-working.gif" width="300"/>
