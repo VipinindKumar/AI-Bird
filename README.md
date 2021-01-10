@@ -15,3 +15,6 @@ AI that learns to play Classic Copter game.
 
 ### With collision
 <img src="progress/5-collision.gif" alt="copter game with collision" width="300"/>
+
+### Multiple Copters generation using NEAT
+<img src="progress/6-copters.gif" width="300"/>
