@@ -38,3 +38,5 @@ AI that learns to play Classic Copter game.
   - generation 7's two copters reached score 22
   - change helped?
   - maybe, need deeper dive and running for a fixed saturated amount of time
+  
+- Can mke the game run faster, by increasing the FPS constant
