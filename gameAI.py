@@ -252,7 +252,16 @@ def eval_genomes(genomes, config):
 
 				obstacles.append(obstacle(500, rdm))
 
+			# if copter passed this obstacle
+			if obstacle.passedCopter():
+				score += 1
+
+			# remove obstacle that passed the screen
+			if obstacle.passedScreen():
+				obstacles.popleft()
+
 			#
+
 
 
 def run(config_file):
