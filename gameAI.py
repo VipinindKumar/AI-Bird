@@ -124,6 +124,8 @@ def drawScreen(copters, obstacles, score):
 	'''draws copters and obstacles and
 		add labels for scroe and generation 
 	'''
+	global generation
+
 	# clear screen
 	win.fill(BACKGROUND)
 
@@ -159,6 +161,7 @@ def eval_genomes(genomes, config):
 		performance
 	'''
 	# vriable definations to be used in fn
+	global generation
 	generation += 1
 	score = 0
 	run = True
