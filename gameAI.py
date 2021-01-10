@@ -134,8 +134,8 @@ def drawScreen(copters, obstacles, score):
 		obst.draw()
 
 	# draw every copter
-	for copter in copters:
-		copter.draw()
+	for heli in copters:
+		heli.draw()
 
 
 	font = pygame.freetype.SysFont(None, 20)
@@ -200,15 +200,15 @@ def eval_genomes(genomes, config):
 				break
 
 		# move copter and predict if copter need to jump or not
-		for i, copter in enumerate(copters):
+		for i, heli in enumerate(copters):
 			# increase fitness for copter for every frame survived
 			gl[i].fitness += 0.1
-			copter.move()
+			heli.move()
 
 			# inputs y position of copter and vertical distance b/w copter and obstacle
-			predict = nnets[i].activate((copter.y, abs(copter.y - obstacles[obstIndex].y)))
+			predict = nnets[i].activate((heli.y, abs(heli.y - obstacles[obstIndex].y)))
 			if predict[0] > 0.5:
-				copter.jump()
+				heli.jump()
 
 		# advance the game
 
@@ -216,8 +216,8 @@ def eval_genomes(genomes, config):
 			obst.move()
 			
 			# remove copter if collidede with obstacle
-			for i, copter in enumerate(copters):
-				if obst.collision(copter):
+			for i, heli in enumerate(copters):
+				if obst.collision(heli):
 					gl[i].fitness -= 1
 					gl.pop(i)
 					nnets.pop(i)
@@ -242,8 +242,8 @@ def eval_genomes(genomes, config):
 				obstacles.popleft()
 
 		# remove copters that fallen down
-		for i, copter in enumerate(copters):
-			if copter.y >= HEIGHT:
+		for i, heli in enumerate(copters):
+			if heli.y >= HEIGHT:
 				nnets.pop(i)
 				copters.pop(i)
 				gl.pop(i)
