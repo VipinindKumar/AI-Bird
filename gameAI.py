@@ -86,7 +86,9 @@ class obstacle(object):
 		self.x, self.y = x, y
 		self.width = random.randrange(100, 500)
 		self.image = pygame.Rect(self.x, self.y, self.width, THICKNESS)
-		
+		self.varPassedEnd = False
+		self.varPassedCopter = False
+
 	def draw(self):
 		'''draws the obstacle rectangle
 		at x,y with defined thickness and width'''
@@ -110,12 +112,24 @@ class obstacle(object):
 
 	def passedEnd(self):
 		'''fn to tell if end of the screen has been passed'''
-		return (self.x + self.width) < WIDTH
+		if self.varPassedEnd:
+			return True
+
+		if (self.x + self.width) < WIDTH:
+			self.varPassedEnd = True
+			return True
+		return False
 
 	def passedCopter(self):
 		'''returns True if obstaces has passed copter or width/4
 		'''
-		return (self.x + self.width) < (WIDTH / 4)
+		if self.varPassedCopter:
+			return True
+		
+		if (self.x + self.width) < (WIDTH / 4):
+			self.varPassedCopter = True
+			return True
+		return False
 
 	def passedScreen(self):
 		'''if copter has passed the whole screen
